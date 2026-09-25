@@ -6,9 +6,11 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { DocumentModule } from './document/document.module';
 import { DocumentEntity } from './document/entities/document.entity';
+import { MqModule } from './mq/mq.module';
 
 @Module({
   imports: [
+    MqModule,
     ConfigModule.forRoot({ isGlobal: true }),
     TypeOrmModule.forRootAsync({
       inject: [ConfigService],
